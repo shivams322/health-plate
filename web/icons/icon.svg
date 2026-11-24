@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs>
+  <radialGradient id="bg" cx="28%" cy="18%" r="105%"><stop offset="0" stop-color="#4a2a16"/><stop offset=".5" stop-color="#1e1512"/><stop offset="1" stop-color="#110d0b"/></radialGradient>
+  <radialGradient id="steel" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#b3aca4"/><stop offset=".5" stop-color="#67615b"/><stop offset="1" stop-color="#34302c"/></radialGradient>
+  <radialGradient id="plate" cx="40%" cy="34%" r="78%"><stop offset="0" stop-color="#433c36"/><stop offset="1" stop-color="#1d1916"/></radialGradient>
+  <radialGradient id="bowl" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#8a837c"/><stop offset="1" stop-color="#3c3733"/></radialGradient></defs>
+    <rect width="1024" height="1024" fill="url(#bg)"/><circle cx="512" cy="512" r="372.0" fill="url(#steel)"/>
+    <circle cx="512" cy="512" r="336.0" fill="url(#plate)" stroke="#191512" stroke-width="4.0"/>
+    <circle cx="512" cy="512" r="108.0" fill="none" stroke="#2a2522" stroke-width="38.0"/>
+      <circle cx="512" cy="512" r="108.0" fill="none" stroke="#f08a3c" stroke-width="38.0" stroke-linecap="round"
+        stroke-dasharray="529.3 678.6" transform="rotate(-90 512 512)"/>
+    <circle cx="512" cy="512" r="72.0" fill="#f08a3c" opacity=".16"/>
+    <circle cx="334" cy="334" r="98.0" fill="url(#bowl)" stroke="#9c958e" stroke-width="5.0"/>
+        <circle cx="334" cy="334" r="78.0" fill="#26211e"/>
+        <circle cx="334" cy="334" r="60.0" fill="none" stroke="#2a2522" stroke-width="22.0"/>
+      <circle cx="334" cy="334" r="60.0" fill="none" stroke="#e85d6c" stroke-width="22.0" stroke-linecap="round"
+        stroke-dasharray="271.4 377.0" transform="rotate(-90 334 334)"/><circle cx="690" cy="334" r="98.0" fill="url(#bowl)" stroke="#9c958e" stroke-width="5.0"/>
+        <circle cx="690" cy="334" r="78.0" fill="#26211e"/>
+        <circle cx="690" cy="334" r="60.0" fill="none" stroke="#2a2522" stroke-width="22.0"/>
+      <circle cx="690" cy="334" r="60.0" fill="none" stroke="#7d8cff" stroke-width="22.0" stroke-linecap="round"
+        stroke-dasharray="233.7 377.0" transform="rotate(-90 690 334)"/><circle cx="690" cy="690" r="98.0" fill="url(#bowl)" stroke="#9c958e" stroke-width="5.0"/>
+        <circle cx="690" cy="690" r="78.0" fill="#26211e"/>
+        <circle cx="690" cy="690" r="60.0" fill="none" stroke="#2a2522" stroke-width="22.0"/>
+      <circle cx="690" cy="690" r="60.0" fill="none" stroke="#e3b23c" stroke-width="22.0" stroke-linecap="round"
+        stroke-dasharray="309.1 377.0" transform="rotate(-90 690 690)"/><circle cx="334" cy="690" r="98.0" fill="url(#bowl)" stroke="#9c958e" stroke-width="5.0"/>
+        <circle cx="334" cy="690" r="78.0" fill="#26211e"/>
+        <circle cx="334" cy="690" r="60.0" fill="none" stroke="#2a2522" stroke-width="22.0"/>
+      <circle cx="334" cy="690" r="60.0" fill="none" stroke="#2fbf8f" stroke-width="22.0" stroke-linecap="round"
+        stroke-dasharray="256.4 377.0" transform="rotate(-90 334 690)"/></svg>

@@ -1,0 +1,69 @@
+# Cloud builds for Health Plate on Codemagic (https://codemagic.io), free tier included.
+# Lets you build the iOS app without owning a Mac, and the Android app without Android Studio.
+#
+# One-time setup in the Codemagic web app (Team settings → Code signing identities, Integrations):
+#   Android: upload your release keystore and name it  health_plate_keystore
+#   iOS:     add an App Store Connect API key integration and name it  health_plate_asc
+#   Optional auto-upload to Google Play: create a variable group  google_play  holding
+#            GCLOUD_SERVICE_ACCOUNT_CREDENTIALS (a Google Play service-account JSON key)
+
+workflows:
+  android-release:
+    name: Health Plate · Android (Play Store bundle)
+    instance_type: linux_x2
+    max_build_duration: 60
+    environment:
+      node: 22
+      java: 21
+      android_signing:
+        - health_plate_keystore
+      # groups:
+      #   - google_play
+    scripts:
+      - name: Install packages
+        script: npm ci
+      - name: Copy the web app into the Android project
+        script: npx cap sync android
+      - name: Point Gradle at the Android SDK
+        script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Set the version code from the build number
+        script: sed -i "s/versionCode [0-9]*/versionCode $((BUILD_NUMBER + 1))/" android/app/build.gradle
+      - name: Build the signed app bundle (.aab)
+        script: cd android && ./gradlew bundleRelease
+    artifacts:
+      - android/app/build/outputs/**/*.aab
+    # publishing:
+    #   google_play:
+    #     credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+    #     track: internal
+    #     submit_as_draft: true
+
+  ios-release:
+    name: Health Plate · iOS (TestFlight / App Store)
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: health_plate_asc
+    environment:
+      node: 22
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.healthplate.app
+    scripts:
+      - name: Install packages
+        script: npm ci
+      - name: Copy the web app into the iOS project
+        script: npx cap sync ios
+      - name: Apply signing profiles
+        script: xcode-project use-profiles
+      - name: Set the build number
+        script: cd ios/App && agvtool new-version -all $((BUILD_NUMBER + 1))
+      - name: Build the .ipa
+        script: xcode-project build-ipa --project "ios/App/App.xcodeproj" --scheme "App"
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

@@ -1,0 +1,4 @@
+* text=auto
+# Shell scripts must keep Unix line endings so cloud builds (Codemagic, GitHub) can run them
+android/gradlew text eol=lf
+*.sh text eol=lf

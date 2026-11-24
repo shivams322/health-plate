@@ -1,0 +1,36 @@
+{
+  "name": "health-plate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Health Plate: an Indian food, water and meal-timing tracker for the web, Android and iOS.",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "serve:lan": "node scripts/serve.mjs 8080 --lan",
+    "android:run": "cap run android",
+    "ios:run": "cap run ios",
+    "fonts": "node scripts/copy-fonts.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "assets": "capacitor-assets generate --ios --android --iconBackgroundColor \"#15110f\" --iconBackgroundColorDark \"#15110f\" --splashBackgroundColor \"#15110f\" --splashBackgroundColorDark \"#15110f\"",
+    "sync": "cap sync",
+    "android": "cap open android",
+    "ios": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/ios": "^8.6.2",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.2",
+    "@fontsource/baloo-2": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/mukta": "^5.3.0",
+    "sharp": "^0.35.5"
+  }
+}

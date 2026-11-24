@@ -1,0 +1,26 @@
+node_modules/
+.claude/
+# Copy of the claude.ai version of the app (kept locally, not published)
+thali-tracker.html
+.DS_Store
+Thumbs.db
+*.log
+
+# Android build output
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.apk
+*.aab
+*.keystore
+*.jks
+android/keystore.properties
+
+# iOS build output
+ios/App/Pods/
+ios/App/build/
+ios/DerivedData/
+*.xcuserstate
+xcuserdata/
