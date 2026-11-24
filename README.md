@@ -83,7 +83,9 @@ Apple only lets iOS apps be built and run with **Xcode on a Mac**. Windows can't
 
 ## 1. Put the website live (GitHub Pages)
 
-The site is published from the `web/` folder by `.github/workflows/pages.yml` every time you push to the `main` branch. The address is `https://<your-github-username>.github.io/health-plate/`.
+**Live at https://shivams322.github.io/health-plate/**
+
+The site is published from the `web/` folder by `.github/workflows/pages.yml` every time you push to the `main` branch.
 
 **One-time setup:**
 
@@ -96,7 +98,7 @@ The site is published from the `web/` folder by `.github/workflows/pages.yml` ev
 
 **Your own domain (optional):** in *Settings → Pages → Custom domain*, enter something like `healthplate.in`, then add the DNS records GitHub shows you at your domain registrar.
 
-Your privacy policy lives at `https://<your-github-username>.github.io/health-plate/privacy.html`. Both app stores ask for this link.
+Your privacy policy lives at https://shivams322.github.io/health-plate/privacy.html. Both app stores ask for this link.
 
 Netlify and Cloudflare Pages also work if you prefer. `netlify.toml` is already set up to publish `web/`.
 
