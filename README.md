@@ -77,7 +77,7 @@ Apple only lets iOS apps be built and run with **Xcode on a Mac**. Windows can't
 
 ## Before you launch
 
-1. **Add your contact email** in `web/privacy.html` (search for "add your contact email").
+1. **Contact:** `web/privacy.html` points people to this repository's Issues page. App stores may ask for an email too; add one there if you want.
 2. **Check the name.** Search the Play Store, App Store and domain sites for "Health Plate".
 3. **App ID.** The apps use `com.healthplate.app`. If you own a domain, change it now to match (for example `in.yourdomain.healthplate`) in `capacitor.config.json`, `android/app/build.gradle` (namespace and applicationId) and `codemagic.yaml`. It can't be changed after the first store upload.
 
