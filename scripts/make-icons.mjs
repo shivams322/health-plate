@@ -38,7 +38,7 @@ function thali(s = 1) {
   return `<circle cx="512" cy="512" r="${R(372)}" fill="url(#steel)"/>
     <circle cx="512" cy="512" r="${R(336)}" fill="url(#plate)" stroke="#000000" stroke-width="${R(4)}"/>
     ${ring(512, 512, R(108), R(38), '#f08a3c', .78)}
-    <circle cx="512" cy="512" r="${R(72)}" fill="#f08a3c" opacity=".16"/>
+    <circle cx="512" cy="512" r="${R(72)}" fill="#0d0d0d"/>
     ${katoris}`;
 }
 const svg = ({ bg = true, s = 1, size = 1024 } = {}) =>

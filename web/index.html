@@ -10,7 +10,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=4">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -531,6 +531,24 @@ a{color:var(--mint)}
 .restore-confirm .row{display:flex;gap:8px;flex-wrap:wrap}
 .site-foot{max-width:1200px;margin:0 auto;padding-block:0 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-size:12.5px;color:var(--ink-3);display:flex;gap:6px 14px;flex-wrap:wrap}
 @media (max-width:680px){.wrap{padding-bottom:20px}.site-foot{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
+
+/* ---- True-black highlights: neutral fills; colour only on edges, dots, icons and text ---- */
+.brand svg{filter:drop-shadow(0 0 8px rgba(255,255,255,.08))}
+.tab[aria-selected="true"]{background:#141414;box-shadow:inset 0 0 0 1px var(--tab),0 0 16px -6px var(--tab)}
+.bn[aria-current="page"]{background:#141414;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tab) 70%,transparent)}
+.h-ico{background:#111111;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ic) 55%,transparent)}
+.chip-btn.on{background:#161616;box-shadow:inset 0 0 0 1px var(--c)}
+.seg button.on{background:#161616;box-shadow:inset 0 0 0 1px var(--seg)}
+.st-low,.st-close,.st-met,.st-ok,.st-over{background:transparent}
+.w-btn{background:#111111}
+.w-btn:hover:not(:disabled){background:#1a1a1a}
+.water-target,.next,.banner,.mt,.restore-confirm,.ex.on,.sk-tile.on,.badge.got{background:var(--surface-2)}
+.tl-win{background:#111111}
+.sk-chip{background:#111111}
+.sk-ico{background:#111111;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 45%,transparent)}
+.medal .m-rim{fill:#1a1a1a}
+.bal-pace{background:transparent}
+.badge-toast{background:#111111}
 </style>
 </head>
 <body>
@@ -2765,7 +2783,22 @@ function readBackup(file){
 // Offline support for the website (the Android/iOS apps already ship their files)
 if ('serviceWorker' in navigator && !(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform())
     && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  window.addEventListener('load', () => {
+    // When a new version is published, check for it each time the app comes back on screen,
+    // and reload once it has installed, so home-screen apps on iPhone and Android stay current.
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadController || reloading) return;
+      reloading = true;
+      location.reload();
+    });
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      const check = () => reg.update().catch(() => {});
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') check(); });
+      setInterval(check, 60 * 60 * 1000);
+    }).catch(() => {});
+  });
 }
 </script>
 </body>

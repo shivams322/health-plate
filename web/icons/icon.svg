@@ -8,7 +8,7 @@
     <circle cx="512" cy="512" r="108.0" fill="none" stroke="#262626" stroke-width="38.0"/>
       <circle cx="512" cy="512" r="108.0" fill="none" stroke="#f08a3c" stroke-width="38.0" stroke-linecap="round"
         stroke-dasharray="529.3 678.6" transform="rotate(-90 512 512)"/>
-    <circle cx="512" cy="512" r="72.0" fill="#f08a3c" opacity=".16"/>
+    <circle cx="512" cy="512" r="72.0" fill="#0d0d0d"/>
     <circle cx="334" cy="334" r="98.0" fill="url(#bowl)" stroke="#9c9c9c" stroke-width="5.0"/>
         <circle cx="334" cy="334" r="78.0" fill="#1c1c1c"/>
         <circle cx="334" cy="334" r="60.0" fill="none" stroke="#262626" stroke-width="22.0"/>
