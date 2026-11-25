@@ -577,7 +577,7 @@ a{color:var(--mint)}
           <div class="card-head"><div class="card-title"><span class="h-ico" style="--ic:var(--saffron)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><div><h2>Add what you ate</h2><p class="card-sub">Pick a food, set how much, choose the meal and time.</p></div></div></div>
           <div class="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <input id="food-search" type="search" placeholder="Search 370+ foods: roti, dal, paneer, dosa, whey…" autocomplete="off" aria-label="Search foods">
+            <input id="food-search" type="search" placeholder="Search 410+ foods: roti, dal, egg whites, creatine…" autocomplete="off" aria-label="Search foods">
           </div>
           <div class="chips" id="cat-chips" role="toolbar" aria-label="Food categories"></div>
           <div class="brand-row" id="brand-row" hidden>
@@ -878,7 +878,7 @@ const RAW = [
  ['tandoori-chicken','Tandoori chicken','तंदूरी चिकन','nonveg','n','pc:100',[175,25,2.5,7,0.3,25,1.2,28,1.8,300,450,20,1,0.35,6],'leg piece'],
  ['chicken-tikka','Chicken tikka','चिकन टिक्का','nonveg','n','pc:30',[160,24,3,6,0.3,25,1,28,1.4,300,450,15,1,0.3,6],'kebab'],
  ['chicken-breast','Grilled chicken breast','ग्रिल्ड चिकन','nonveg','n','serving:100',[165,31,0,3.6,0,15,1,29,1,256,74,6,0,0.34,4],'boiled chicken'],
- ['egg-boiled','Boiled egg','उबला अंडा','nonveg','e','pc:50',[155,12.6,1.1,10.6,0,50,1.2,10,1.05,126,124,149,0,1.1,44],'anda egg'],
+ ['egg-boiled','Boiled egg','उबला अंडा','nonveg','e','pc:50',[155,12.6,1.1,10.6,0,50,1.2,10,1.05,126,124,149,0,1.1,44],'anda egg whole egg ubla'],
  ['omelette','Omelette (2 eggs)','ऑमलेट','nonveg','e','pc:120',[180,11,2.5,14,0.4,50,1.4,12,1,150,300,140,3,0.9,40],'omlet anda'],
  ['bhurji','Egg bhurji','अंडा भुर्जी','nonveg','e','katori:100',[190,11,3,15,0.5,55,1.5,12,1,170,320,140,6,0.9,45],'scrambled anda'],
  ['egg-curry','Egg curry','अंडा करी','nonveg','e','katori:150',[150,8,5,11,1,40,1.1,14,0.8,180,350,100,4,0.6,25],'anda curry'],
@@ -1135,7 +1135,7 @@ const RAW = [
  ['chicken-65','Chicken 65','चिकन 65','nonveg','n','plate:150',[260,20,9,16,0.8,25,1.2,25,1.6,280,600,25,3,0.3,10],'fried chicken'],
  ['kadai-chicken','Kadai chicken','कड़ाही चिकन','nonveg','n','katori:150',[175,15,5,10.5,1,25,1.1,25,1.4,300,400,40,15,0.25,12],'kadhai murgh'],
  ['shammi-kebab','Shammi kebab','शामी कबाब','nonveg','n','pc:50',[230,16,8,15,2,35,2.5,30,3,280,400,20,2,1.2,30],'kabab'],
- ['egg-white','Egg white (boiled)','अंडे की सफ़ेदी','nonveg','e','pc:33',[52,10.9,0.7,0.2,0,7,0.1,11,0.03,163,166,0,0,0.09,4],'anda safedi'],
+ ['egg-white','Egg white (boiled)','अंडे की सफ़ेदी','nonveg','e','pc:33',[52,10.9,0.7,0.2,0,7,0.1,11,0.03,163,166,0,0,0.09,4],'anda safedi egg whites'],
  ['tomato-soup','Tomato soup','टमाटर सूप','soup','v','bowl:250',[45,1.2,6,2,1,15,0.5,10,0.2,220,350,40,10,0,12],'tamatar shorba'],
  ['sol-kadhi','Sol kadhi','सोल कढ़ी','drink','v','glass:200',[70,0.8,3,6,0.8,10,0.6,12,0.2,120,250,0,3,0,5],'kokum coconut konkan'],
  ['sattu-drink','Sattu drink (namkeen)','सत्तू ड्रिंक','drink','v','glass:250',[48,2.6,7.2,0.65,2,15,0.9,25,0.4,100,150,0,2,0,25],'sattu sharbat roasted gram'],
@@ -1151,9 +1151,9 @@ const RAW = [
  ['boiled-chana','Boiled kabuli chana','उबले छोले','dal','v','katori:100',[164,8.9,27.4,2.6,7.6,49,2.9,48,1.5,291,7,1,1.3,0,172],'chickpea salad'],
  ['ketchup','Tomato ketchup','टोमैटो केचप','extra','v','tbsp:15',[112,1.2,26,0.1,0.3,15,0.35,13,0.2,280,900,25,4,0,10],'sauce'],
  ['muesli','Muesli','म्यूज़ली','rice','v','bowl:50',[370,9,66,6.5,7,50,4,90,2,400,150,0,0,0,30],'granola cereal'],
- ['sweet-potato','Boiled sweet potato','शकरकंद','fruit','v','pc:130',[90,2,20.7,0.15,3.3,38,0.7,27,0.3,475,36,961,19.6,0,6],'shakarkandi'],
- ['bhutta','Roasted corn (bhutta)','भुट्टा','fruit','v','pc:100',[96,3.4,21,1.5,2.4,3,0.45,26,0.6,218,150,10,5.5,0,23],'corn on the cob makka'],
- ['carrot','Carrot (raw)','गाजर','fruit','v','pc:60',[41,0.9,9.6,0.2,2.8,33,0.3,12,0.24,320,69,835,5.9,0,19],'gajar'],
+ ['sweet-potato','Boiled sweet potato','शकरकंद','veg','v','pc:130',[90,2,20.7,0.15,3.3,38,0.7,27,0.3,475,36,961,19.6,0,6],'shakarkandi'],
+ ['bhutta','Roasted corn (bhutta)','भुट्टा','veg','v','pc:100',[96,3.4,21,1.5,2.4,3,0.45,26,0.6,218,150,10,5.5,0,23],'corn on the cob makka'],
+ ['carrot','Carrot (raw)','गाजर','veg','v','pc:60',[41,0.9,9.6,0.2,2.8,33,0.3,12,0.24,320,69,835,5.9,0,19],'gajar'],
  ['pineapple','Pineapple','अनानास','fruit','v','bowl:150',[50,0.5,13,0.1,1.4,13,0.3,12,0.1,109,1,3,48,0,18],'ananas'],
  ['muskmelon','Muskmelon','खरबूजा','fruit','v','bowl:150',[34,0.8,8.2,0.2,0.9,9,0.2,12,0.2,267,16,169,36.7,0,21],'kharbuja cantaloupe'],
  ['litchi','Litchi','लीची','fruit','v','pc:10',[66,0.8,16.5,0.4,1.3,5,0.3,10,0.07,171,1,0,71.5,0,14],'lychee'],
@@ -1187,6 +1187,47 @@ const RAW = [
  ["bigmuscles-gold", "Bigmuscles Premium Gold Whey", "", "supp", "v", "scoop:37", [351, 67.6, 13.2, 4.59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "big muscles premium gold protein powder supplement", "Bigmuscles Nutrition", "Listing: 25 g protein per scoop. Carbs and fat from a database calorie split."],
  ["plix-plant", "Plix Plant Protein", "", "supp", "v", "scoop:34", [318, 73.5, 14.7, 1.76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "vegan pea protein plant based protein powder supplement", "Plix", "Database listing: 25 g protein per 34 g scoop. Vegan (pea and brown rice)."],
  ["protinex", "Protinex Original", "", "supp", "v", "scoop:30", [350, 32, 54.7, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "danone protein drink mix protein powder supplement", "Protinex", "Listing: about 32 g protein per 100 g. Usually mixed in milk, which is logged separately."],
+ // Plain foods, gym supplements and casein (added later)
+ ["boiled-aloo", "Boiled potato (aloo)", "उबला आलू", "veg", "v", "pc:150,katori:150", [87, 1.87, 20.1, 0.1, 1.8, 5, 0.31, 22, 0.3, 379, 4, 0, 13, 0, 10], "aloo boiled potato ubla plain"],
+ ["boiled-peas", "Boiled green peas", "उबले मटर", "veg", "v", "katori:100", [84, 5.4, 15.6, 0.2, 5.5, 27, 1.54, 39, 1.19, 271, 3, 40, 14.2, 0, 63], "matar boiled peas"],
+ ["boiled-spinach", "Boiled spinach", "उबला पालक", "veg", "v", "katori:100", [23, 3, 3.8, 0.3, 2.4, 136, 3.6, 87, 0.76, 466, 70, 524, 9.8, 0, 146], "palak boiled"],
+ ["broccoli", "Broccoli (steamed)", "ब्रोकली", "veg", "v", "bowl:100", [35, 2.4, 7.2, 0.4, 3.3, 40, 0.67, 21, 0.45, 293, 41, 77, 64.9, 0, 108], "broccoli boiled"],
+ ["cucumber", "Cucumber", "खीरा", "veg", "v", "pc:150", [15, 0.65, 3.6, 0.1, 0.5, 16, 0.28, 13, 0.2, 147, 2, 5, 2.8, 0, 7], "kheera kakdi"],
+ ["tomato", "Tomato", "टमाटर", "veg", "v", "pc:100", [18, 0.9, 3.9, 0.2, 1.2, 10, 0.27, 11, 0.17, 237, 5, 42, 13.7, 0, 15], "tamatar"],
+ ["onion", "Onion", "प्याज़", "veg", "v", "pc:100", [40, 1.1, 9.3, 0.1, 1.7, 23, 0.21, 10, 0.17, 146, 4, 0, 7.4, 0, 19], "pyaz pyaaz kanda"],
+ ["beetroot", "Beetroot (boiled)", "चुकंदर", "veg", "v", "pc:80", [44, 1.7, 10, 0.2, 2, 16, 0.79, 23, 0.35, 305, 77, 2, 3.6, 0, 80], "chukandar beet"],
+ ["boiled-moong", "Boiled whole moong", "उबली मूंग", "dal", "v", "katori:100", [105, 7, 19, 0.4, 7.6, 27, 1.4, 48, 0.84, 266, 2, 1, 1, 0, 159], "green gram boiled sabut moong"],
+ ["boiled-rajma", "Boiled rajma (plain)", "उबला राजमा", "dal", "v", "katori:100", [127, 8.7, 22.8, 0.5, 6.4, 35, 2.9, 45, 1, 403, 2, 0, 1.2, 0, 130], "kidney beans boiled"],
+ ["whole-egg", "Whole egg (raw)", "कच्चा अंडा", "nonveg", "e", "pc:50", [143, 12.6, 0.7, 9.5, 0, 56, 1.75, 12, 1.29, 138, 142, 160, 0, 0.89, 47], "anda whole egg kachha"],
+ ["egg-yolk", "Egg yolk", "अंडे की ज़र्दी", "nonveg", "e", "pc:17", [322, 15.9, 3.6, 26.5, 0, 129, 2.73, 5, 2.3, 109, 48, 381, 0, 1.95, 146], "zardi yolk anda"],
+ ["egg-white-omelette", "Egg white omelette (3 whites)", "एग व्हाइट ऑमलेट", "nonveg", "e", "pc:110", [75, 10, 1.5, 3, 0.2, 10, 0.2, 12, 0.05, 170, 220, 5, 2, 0.08, 6], "omelet egg whites safedi"],
+ ["grilled-fish", "Grilled fish fillet", "ग्रिल्ड मछली", "nonveg", "n", "serving:100", [130, 22, 0, 4.5, 0, 30, 0.5, 30, 0.5, 380, 80, 15, 0, 1.5, 10], "fish fillet basa rohu machli"],
+ ["tuna", "Canned tuna (in water)", "टूना", "nonveg", "n", "serving:100", [116, 25.5, 0, 0.8, 0, 11, 1.5, 27, 0.8, 237, 247, 17, 0, 2.99, 4], "tuna can fish"],
+ ["chicken-thigh", "Chicken thigh (cooked, skinless)", "चिकन थाई", "nonveg", "n", "serving:100", [179, 24.8, 0, 8.2, 0, 11, 1.1, 23, 2.1, 269, 106, 18, 0, 0.36, 8], "chicken leg boneless"],
+ ["skim-milk", "Skimmed milk", "स्किम्ड दूध", "dairy", "v", "glass:250,cup:150", [34, 3.4, 5, 0.1, 0, 122, 0.03, 11, 0.42, 156, 42, 61, 0, 0.5, 5], "fat free milk doodh"],
+ ["double-toned", "Double toned milk", "डबल टोंड दूध", "dairy", "v", "glass:250,cup:150", [46, 3.2, 4.8, 1.5, 0, 120, 0.05, 11, 0.4, 145, 45, 25, 1, 0.4, 5], "low fat milk doodh"],
+ ["oats-dry", "Rolled oats (dry)", "ओट्स", "rice", "v", "bowl:40,tbsp:10", [389, 16.9, 66, 6.9, 10.6, 54, 4.7, 177, 3.97, 429, 2, 0, 0, 0, 56], "oats raw oatmeal"],
+ ["quinoa", "Quinoa (cooked)", "क्विनोआ", "rice", "v", "katori:150", [120, 4.4, 21.3, 1.9, 2.8, 17, 1.5, 64, 1.1, 172, 7, 0, 0, 0, 42], "quinoa"],
+ ["black-coffee", "Black coffee (no sugar)", "ब्लैक कॉफ़ी", "drink", "v", "cup:150", [1, 0.1, 0, 0, 0, 2, 0.01, 3, 0.02, 49, 2, 0, 0, 0, 2], "americano espresso coffee"],
+ ["creatine", "Creatine monohydrate", "", "gym", "v", "scoop:5,tsp:3", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "creatine supplement", "", "No calories or tracked nutrients. Logged so you can see when you took it; 3 to 5 g a day is typical."],
+ ["bcaa", "BCAA powder", "", "gym", "v", "scoop:7", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "bcaa amino acids intra workout", "", "Labels list about 0 kcal. Amino acids are not counted toward your protein target because they are not a complete protein."],
+ ["eaa", "EAA powder", "", "gym", "v", "scoop:10", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "eaa essential amino acids", "", "Labels list about 0 kcal. Amino acids are not counted toward your protein target because they are not a complete protein."],
+ ["glutamine", "L-Glutamine", "", "gym", "v", "scoop:5", [400, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "glutamine recovery", "", "Counted as 20 kcal per 5 g scoop, but not toward your protein target."],
+ ["preworkout", "Pre-workout", "", "gym", "v", "scoop:10", [100, 0, 25, 0, 0, 0, 0, 0, 0, 500, 1000, 0, 0, 0, 0], "pre workout preworkout booster", "", "Most pre-workouts have 150 to 300 mg of caffeine, which the app does not track. Check your label."],
+ ["protein-bar", "Protein bar (20 g protein)", "", "gym", "v", "bar:60", [366.67, 33.33, 36.67, 11.67, 8.33, 250, 3.33, 66.67, 2.5, 333.33, 300, 0, 0, 0, 0], "protein bar snack", "", "A typical bar. Brands range from about 10 to 25 g protein, so check your wrapper."],
+ ["electrolyte", "Electrolyte drink (tablet or sachet)", "", "gym", "v", "glass:250", [4, 0, 1, 0, 0, 0, 0, 12, 0, 48, 100, 0, 0, 0, 0], "electrolytes hydration fast up enerzal", "", "Per glass made up as directed. Counts toward your water too."],
+ ["ors", "ORS (oral rehydration solution)", "", "gym", "v", "glass:200", [5.5, 0, 1.35, 0, 0, 0, 0, 0, 0, 78, 172.5, 0, 0, 0, 0], "ors electral rehydration", "", "WHO formula, per 200 ml glass. Counts toward your water too."],
+ ["sports-drink", "Sports drink (Gatorade-type)", "", "gym", "v", "bottle:500", [24, 0, 6, 0, 0, 0, 0, 0, 0, 12, 45, 0, 0, 0, 0], "gatorade isotonic", "", "Per 500 ml bottle. Counts toward your water too."],
+ ["energy-drink", "Energy drink (Red Bull-type)", "", "gym", "v", "can:250", [44.8, 0, 11, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0.8, 0], "red bull monster energy", "", "Per 250 ml can, which also has about 80 mg of caffeine (not tracked)."],
+ ["multivitamin", "Multivitamin tablet", "", "gym", "v", "tablet:1.5", [0, 0, 0, 0, 0, 6666.67, 666.67, 3333.33, 666.67, 0, 0, 40000, 5333.33, 166.67, 13333.33], "multivitamin vitamins daily", "", "Typical one-a-day amounts. Brands differ, so check your label."],
+ ["fish-oil", "Fish oil (omega-3) capsule", "", "gym", "n", "capsule:1", [900, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "omega 3 fish oil", "", "Omega-3 is not one of the nutrients the app tracks; only its calories count."],
+ ["vit-d3", "Vitamin D3 (60,000 IU)", "", "gym", "v", "capsule:1", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "vitamin d d3 sachet", "", "Vitamin D is not tracked by the app. 60,000 IU is usually a weekly dose; take it as your doctor advised."],
+ ["b12-tab", "Vitamin B12 tablet (1500 mcg)", "", "gym", "v", "tablet:0.5", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300000, 0], "methylcobalamin b12", "", "Counts toward vitamin B12. Your body absorbs only a small share of a high-dose tablet."],
+ ["ifa", "Iron + folic acid tablet (IFA)", "", "gym", "v", "tablet:0.5", [0, 0, 0, 0, 0, 0, 12000, 0, 0, 0, 0, 0, 0, 0, 100000], "iron folic acid tablet", "", "The standard IFA tablet: 60 mg iron and 500 mcg folic acid."],
+ ["calcium-d3", "Calcium + D3 tablet (500 mg)", "", "gym", "v", "tablet:1.5", [0, 0, 0, 0, 0, 33333.33, 0, 0, 0, 0, 0, 0, 0, 0, 0], "calcium shelcal tablet", "", "Counts 500 mg calcium. The vitamin D in it is not tracked."],
+ ["zma", "ZMA (zinc, magnesium, B6)", "", "gym", "v", "serving:2.5", [0, 0, 0, 0, 0, 0, 0, 18000, 1200, 0, 0, 0, 0, 0, 0], "zma zinc magnesium", "", "Per 3-capsule serving."],
+ ["ashwagandha", "Ashwagandha capsule", "", "gym", "v", "capsule:0.6", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "ashwagandha ksm 66", "", "No tracked nutrients; logged for your record."],
+ ["casein", "Casein protein (generic)", "", "supp", "v", "scoop:33", [363.64, 72.73, 9.09, 3.03, 0, 1363.64, 0, 0, 0, 0, 606.06, 0, 0, 0, 0], "casein slow protein night powder supplement", "Generic", "Typical casein: 24 g protein per 33 g scoop."],
 ];
 
 const CATS = [
@@ -1205,7 +1246,9 @@ const CATS = [
   {id:'nuts',  name:'Dry fruits & seeds', c:'#c9a27e'},
   {id:'soup',  name:'Soups & salads',     c:'#cfe08a'},
   {id:'extra', name:'Ghee, oil & extras', c:'#b8aca2'},
+  {id:'veg',   name:'Plain veggies',      c:'#86efac'},
   {id:'supp',  name:'Protein powders',    c:'#ffd84a'},
+  {id:'gym',   name:'Gym supplements',    c:'#fb923c'},
   {id:'custom',name:'My foods',           c:'#b3a1ff'},
 ];
 const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
@@ -1240,7 +1283,7 @@ function defaultTime(meal){
 function entryTime(e){ return e.t != null ? e.t : MEAL_PLAN[e.meal].time; }
 
 function parseUnits(str){
-  const liquid = /glass|cup|can/.test(str);
+  const liquid = /glass|cup|can|bottle/.test(str);
   const units = str.split(',').map(s => { const [u,g] = s.split(':'); return {u, g:+g, ml:liquid}; });
   units.push({u: liquid ? 'ml' : 'g', g:1, ml:liquid});
   return units;
@@ -1624,13 +1667,17 @@ function renderBrands(){
 function searchScore(f, tokens){
   const name = f.name.toLowerCase(), words = name.split(/[\s/()·,-]+/), extra = (f.alias + ' ' + f.hi + ' ' + f.brand + ' ' + CAT[f.cat].name).toLowerCase();
   let total = 0;
-  for (const t of tokens){
+  const forms = t => (t.length > 3 && t.endsWith('s')) ? [t, t.slice(0, -1)].concat(t.endsWith('es') ? [t.slice(0, -2)] : []) : [t];
+  for (const t0 of tokens){
     let s = 0;
-    if (name.startsWith(t)) s = 100;
-    else if (words.some(w => w.startsWith(t))) s = 80;
-    else if (name.includes(t)) s = 60;
-    else if (extra.split(/\s+/).some(w => w.startsWith(t))) s = 45;
-    else if (extra.includes(t)) s = 30;
+    for (const t of forms(t0)){
+      if (name.startsWith(t)) s = 100;
+      else if (words.some(w => w.startsWith(t))) s = 80;
+      else if (name.includes(t)) s = 60;
+      else if (extra.split(/\s+/).some(w => w.startsWith(t))) s = 45;
+      else if (extra.includes(t)) s = 30;
+      if (s) break;
+    }
     if (!s) return 0;
     total += s;
   }
@@ -1688,7 +1735,7 @@ function renderPicker(){
     <div class="chips" style="padding:0" role="radiogroup" aria-label="Meal">${MEALS.map(x => `<button type="button" role="radio" aria-checked="${x.id===state.meal}" class="chip-btn ${x.id===state.meal?'on':''}" style="--c:${x.c}" data-action="meal" data-meal="${x.id}">${x.name}</button>`).join('')}</div>
     <label class="pk-time"><span>Eaten at</span><input type="time" id="pk-time" value="${hhmm(s.time)}"><small>${s.time > MEAL_PLAN[state.meal].win[1] ? 'Later than usual for ' + esc(m.name.toLowerCase()) : 'Used to check meal timing'}</small></label>
     <div id="pk-preview" class="pk-preview"></div>
-    ${f.note ? `<div class="pk-note">${esc(f.note)} Flavours differ, so check your tub's label.</div>` : ''}
+    ${f.note ? `<div class="pk-note">${esc(f.note)}${f.cat === 'supp' ? ' Flavours differ, so check your tub\'s label.' : ''}</div>` : ''}
     <button type="button" class="btn-add" id="btn-add" data-action="add" style="--c:${m.c}" ${state.loading?'disabled':''}>${state.loading ? 'Loading your log…' : 'Add to ' + esc(m.name)}</button>`;
   renderPreview();
 }
@@ -1796,7 +1843,7 @@ function topSources(k, entries, n){
 function suggestFoods(k, n){
   const diet = state.profile.diet;
   const ok = diet === 'veg' ? ['v'] : diet === 'egg' ? ['v','e'] : ['v','e','n'];
-  return FOODS.filter(f => ok.includes(f.diet) && !['sweet','extra','supp'].includes(f.cat) && f.id !== 'cola')
+  return FOODS.filter(f => ok.includes(f.diet) && !['sweet','extra','supp','gym'].includes(f.cat) && f.id !== 'cola')
     .map(f => { const u = f.units[0], amt = f.v[IDX[k]]*u.g/100, kc = f.v[0]*u.g/100; return {f, u, amt, kc, score: amt/Math.sqrt(Math.max(kc,40))}; })
     .filter(x => x.amt > 0 && x.kc <= 450)
     .sort((a,b) => b.score - a.score).slice(0, n || 3);
@@ -2216,7 +2263,7 @@ function recommendNext(meal, n){
   const ok = diet === 'veg' ? ['v'] : diet === 'egg' ? ['v','e'] : ['v','e','n'];
   const eaten = new Set(entries.map(e => e.food));
   const prefer = MEAL_CATS[meal] || MEAL_CATS.snack;
-  const scored = FOODS.filter(f => ok.includes(f.diet) && !['sweet','extra','supp'].includes(f.cat) && f.id !== 'cola' && f.id !== 'green-tea')
+  const scored = FOODS.filter(f => ok.includes(f.diet) && !['sweet','extra','supp','gym'].includes(f.cat) && f.id !== 'cola' && f.id !== 'green-tea' && f.id !== 'black-coffee')
     .map(f => {
       const u = f.units[0], g = u.g, kc = f.v[0]*g/100;
       let gain = 0; const adds = [];

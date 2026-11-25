@@ -1,6 +1,6 @@
 // Health Plate service worker: makes the website load and work offline.
 // Bump VERSION whenever you deploy changed files so phones pick up the update.
-const VERSION = 'health-plate-v1';
+const VERSION = 'health-plate-v2';
 const SHELL = [
   './', 'index.html', 'privacy.html', 'manifest.webmanifest', 'fonts/fonts.css',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png',
