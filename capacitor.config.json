@@ -2,24 +2,24 @@
   "appId": "com.healthplate.app",
   "appName": "Health Plate",
   "webDir": "web",
-  "backgroundColor": "#15110f",
+  "backgroundColor": "#000000",
   "android": {
-    "backgroundColor": "#15110f"
+    "backgroundColor": "#000000"
   },
   "ios": {
-    "backgroundColor": "#15110f",
+    "backgroundColor": "#000000",
     "contentInset": "never"
   },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 800,
       "launchAutoHide": true,
-      "backgroundColor": "#15110f",
+      "backgroundColor": "#000000",
       "showSpinner": false
     },
     "StatusBar": {
       "style": "DARK",
-      "backgroundColor": "#15110f",
+      "backgroundColor": "#000000",
       "overlaysWebView": false
     }
   }

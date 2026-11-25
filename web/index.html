@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Health Plate · Indian food, water and nutrition tracker</title>
 <meta name="description" content="Track Indian meals, water, protein, vitamins and minerals against targets set by your body and exercise. Free, private and works offline.">
-<meta name="theme-color" content="#15110f">
+<meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
@@ -25,16 +25,16 @@
    Palette: a dark masala-dabba — cast-iron ground, steel thali, one spice colour per nutrient, meal and option group. */
 :root{
   color-scheme: dark;
-  --bg:#15110f;
-  --surface:#211b18;
-  --surface-2:#2a2320;
-  --surface-3:#352c28;
-  --line:#463a33;
-  --line-soft:#2f2724;
-  --ink:#f5ede6;
-  --ink-2:#c8b9ad;
-  --ink-3:#9c8d82;
-  --track:#3b312c;
+  --bg:#000000;
+  --surface:#0e0e0e;
+  --surface-2:#161616;
+  --surface-3:#1f1f1f;
+  --line:#2e2e2e;
+  --line-soft:#1c1c1c;
+  --ink:#f5f5f5;
+  --ink-2:#b5b5b5;
+  --ink-3:#8a8a8a;
+  --track:#262626;
   --saffron:#f08a3c;
   --mint:#3fcf9f;
   --indigo:#8c9bff;
@@ -45,21 +45,15 @@
   --breakfast:#ecc463; --lunch:#f08a3c; --snack:#e08ad9; --dinner:#8c9bff;
   --good:#4cc38a; --warn:#e9b949; --bad:#f2706b; --over:#d58cf5;
   --veg:#2fa84f; --egg:#e0a526; --nonveg:#c9502f;
-  --steel-1:#6b6560; --steel-2:#47423e; --steel-3:#2c2825;
-  --on-bright:#1a1310;
+  --steel-1:#6b6b6b; --steel-2:#454545; --steel-3:#262626;
+  --on-bright:#0a0a0a;
   --font-display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Mukta","Segoe UI",system-ui,sans-serif;
   --font-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{margin:0;color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;
-  background:
-    radial-gradient(900px 520px at -5% -10%, rgba(240,138,60,.16), transparent 60%),
-    radial-gradient(760px 560px at 108% 4%, rgba(140,155,255,.11), transparent 62%),
-    radial-gradient(820px 520px at 50% 115%, rgba(63,207,159,.08), transparent 60%),
-    var(--bg);
-  background-attachment:fixed}
+body{margin:0;color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;background:var(--bg)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -69,7 +63,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:700;margin:0;line-height:1.
 .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
 
 /* Header */
-.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(21,17,15,.82);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line-soft)}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(0,0,0,.82);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line-soft)}
 .brand svg{filter:drop-shadow(0 0 10px rgba(240,138,60,.35))}
 .topbar-inner{max-width:1200px;margin:0 auto;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px}
@@ -91,7 +85,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:700;margin:0;line-height:1.
 @media (max-width:680px){
   .tabs{display:none}
   .sync{margin-left:auto}
-  .bottom-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:rgba(26,21,18,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line-soft)}
+  .bottom-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:rgba(10,10,10,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line-soft)}
   .bn{flex:1;appearance:none;border:0;background:transparent;color:var(--ink-3);display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 4px;border-radius:14px;font-size:12px;font-weight:600}
   .bn svg{width:22px;height:22px}
   .bn[aria-current="page"]{color:var(--ink);background:color-mix(in srgb,var(--tab) 18%,transparent)}
@@ -543,7 +537,7 @@ a{color:var(--mint)}
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
-      <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#47423e" stroke="#6b6560" stroke-width="1.5"/><circle cx="17" cy="17" r="12.5" fill="#2c2825"/><circle cx="12" cy="13" r="4" fill="#e85d6c"/><circle cx="22" cy="13" r="4" fill="#b58c22"/><circle cx="17" cy="22" r="4" fill="#1f9e76"/></svg>
+      <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#3d3d3d" stroke="#707070" stroke-width="1.5"/><circle cx="17" cy="17" r="12.5" fill="#141414"/><circle cx="12" cy="13" r="4" fill="#e85d6c"/><circle cx="22" cy="13" r="4" fill="#b58c22"/><circle cx="17" cy="22" r="4" fill="#1f9e76"/></svg>
       <div><span class="brand-name">Health Plate</span><span class="brand-sub">Indian food · daily nutrition</span></div>
     </div>
     <span id="sync" class="sync" data-state="local">Saved in this browser</span>
@@ -1231,7 +1225,7 @@ const RAW = [
 ];
 
 const CATS = [
-  {id:'all',   name:'All',                c:'#f5ede6'},
+  {id:'all',   name:'All',                c:'#f5f5f5'},
   {id:'bread', name:'Roti & breads',      c:'#e3b866'},
   {id:'rice',  name:'Rice & grains',      c:'#e6dcc3'},
   {id:'south', name:'South Indian',       c:'#5fd3ab'},
@@ -1802,12 +1796,12 @@ function thaliSVG(tot, tg){
   const anim = !thaliAnimated && tot.kcal > 0; if (anim) thaliAnimated = true;
   let s = `<svg class="thali${anim ? ' anim' : ''}" viewBox="0 0 320 320" role="img" aria-label="Calories ${fmt(tot.kcal,'kcal')} of ${fmt(tg.kcal,'kcal')} kcal. ${macros.map(([k]) => `${NUT[k].label} ${fmt(tot[k],k)} of ${fmt(tg[k],k)} g`).join('. ')}">
   <defs>
-    <radialGradient id="steel" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#7a746e"/><stop offset=".55" stop-color="#4b4642"/><stop offset="1" stop-color="#2e2a27"/></radialGradient>
-    <radialGradient id="plate" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#3a3531"/><stop offset="1" stop-color="#242019"/></radialGradient>
-    <radialGradient id="bowl" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#5c5651"/><stop offset="1" stop-color="#34302c"/></radialGradient>
+    <radialGradient id="steel" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#8c8c8c"/><stop offset=".55" stop-color="#4a4a4a"/><stop offset="1" stop-color="#242424"/></radialGradient>
+    <radialGradient id="plate" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#262626"/><stop offset="1" stop-color="#0d0d0d"/></radialGradient>
+    <radialGradient id="bowl" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#565656"/><stop offset="1" stop-color="#2a2a2a"/></radialGradient>
   </defs>
   <circle cx="160" cy="160" r="157" fill="url(#steel)"/>
-  <circle cx="160" cy="160" r="146" fill="url(#plate)" stroke="#1b1815" stroke-width="1"/>
+  <circle cx="160" cy="160" r="146" fill="url(#plate)" stroke="#000000" stroke-width="1"/>
   <g><title>Calories: ${fmt(tot.kcal,'kcal')} of ${fmt(tg.kcal,'kcal')} kcal (${Math.round(kp*100)}%)</title>
   ${ringArc(160,160,54,12,kp,'var(--saffron)')}
   <text x="160" y="158" text-anchor="middle" class="t-big">${fmt(tot.kcal,'kcal')}</text>
@@ -1816,7 +1810,7 @@ function thaliSVG(tot, tg){
   macros.forEach(([k,dx,dy]) => {
     const cx = 160 + dx*d, cy = 160 + dy*d, pct = tg[k] ? tot[k]/tg[k] : 0;
     s += `<g><title>${NUT[k].label}: ${fmt(tot[k],k)} of ${fmt(tg[k],k)} g (${Math.round(pct*100)}%)</title>
-      <circle cx="${cx}" cy="${cy}" r="37" fill="url(#bowl)" stroke="#6b6560" stroke-width="1.5"/>
+      <circle cx="${cx}" cy="${cy}" r="37" fill="url(#bowl)" stroke="#707070" stroke-width="1.5"/>
       ${ringArc(cx,cy,28,7,pct,NUT[k].c)}
       <text x="${cx}" y="${cy+2}" text-anchor="middle" class="t-pct">${Math.round(pct*100)}%</text>
       <text x="${cx}" y="${cy+15}" text-anchor="middle" class="t-lbl">${NUT[k].label}</text></g>`;

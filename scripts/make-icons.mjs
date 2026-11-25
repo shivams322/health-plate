@@ -11,12 +11,12 @@ const assets = join(root, 'assets');
 mkdirSync(webIcons, { recursive: true });
 mkdirSync(assets, { recursive: true });
 
-const BG = '#15110f';
+const BG = '#000000';
 const defs = `
-  <radialGradient id="bg" cx="28%" cy="18%" r="105%"><stop offset="0" stop-color="#4a2a16"/><stop offset=".5" stop-color="#1e1512"/><stop offset="1" stop-color="#110d0b"/></radialGradient>
-  <radialGradient id="steel" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#b3aca4"/><stop offset=".5" stop-color="#67615b"/><stop offset="1" stop-color="#34302c"/></radialGradient>
-  <radialGradient id="plate" cx="40%" cy="34%" r="78%"><stop offset="0" stop-color="#433c36"/><stop offset="1" stop-color="#1d1916"/></radialGradient>
-  <radialGradient id="bowl" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#8a837c"/><stop offset="1" stop-color="#3c3733"/></radialGradient>`;
+  <radialGradient id="bg" cx="28%" cy="18%" r="105%"><stop offset="0" stop-color="#2a2a2a"/><stop offset=".5" stop-color="#111111"/><stop offset="1" stop-color="#000000"/></radialGradient>
+  <radialGradient id="steel" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#b5b5b5"/><stop offset=".5" stop-color="#666666"/><stop offset="1" stop-color="#2e2e2e"/></radialGradient>
+  <radialGradient id="plate" cx="40%" cy="34%" r="78%"><stop offset="0" stop-color="#2c2c2c"/><stop offset="1" stop-color="#111111"/></radialGradient>
+  <radialGradient id="bowl" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#8a8a8a"/><stop offset="1" stop-color="#3a3a3a"/></radialGradient>`;
 
 // Thali centred at (512,512) in a 1024 box, scaled by s.
 function thali(s = 1) {
@@ -24,19 +24,19 @@ function thali(s = 1) {
   const at = (dx, dy) => [512 + dx * s, 512 + dy * s];
   const ring = (cx, cy, r, w, color, frac) => {
     const C = 2 * Math.PI * r;
-    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#2a2522" stroke-width="${w}"/>
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#262626" stroke-width="${w}"/>
       <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round"
         stroke-dasharray="${(C * frac).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/>`;
   };
   const katoris = [[-178, -178, '#e85d6c', .72], [178, -178, '#7d8cff', .62], [178, 178, '#e3b23c', .82], [-178, 178, '#2fbf8f', .68]]
     .map(([dx, dy, c, f]) => {
       const [x, y] = at(dx, dy);
-      return `<circle cx="${x}" cy="${y}" r="${R(98)}" fill="url(#bowl)" stroke="#9c958e" stroke-width="${R(5)}"/>
-        <circle cx="${x}" cy="${y}" r="${R(78)}" fill="#26211e"/>
+      return `<circle cx="${x}" cy="${y}" r="${R(98)}" fill="url(#bowl)" stroke="#9c9c9c" stroke-width="${R(5)}"/>
+        <circle cx="${x}" cy="${y}" r="${R(78)}" fill="#1c1c1c"/>
         ${ring(x, y, R(60), R(22), c, f)}`;
     }).join('');
   return `<circle cx="512" cy="512" r="${R(372)}" fill="url(#steel)"/>
-    <circle cx="512" cy="512" r="${R(336)}" fill="url(#plate)" stroke="#191512" stroke-width="${R(4)}"/>
+    <circle cx="512" cy="512" r="${R(336)}" fill="url(#plate)" stroke="#000000" stroke-width="${R(4)}"/>
     ${ring(512, 512, R(108), R(38), '#f08a3c', .78)}
     <circle cx="512" cy="512" r="${R(72)}" fill="#f08a3c" opacity=".16"/>
     ${katoris}`;

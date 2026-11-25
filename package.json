@@ -10,7 +10,7 @@
     "ios:run": "cap run ios",
     "fonts": "node scripts/copy-fonts.mjs",
     "icons": "node scripts/make-icons.mjs",
-    "assets": "capacitor-assets generate --ios --android --iconBackgroundColor \"#15110f\" --iconBackgroundColorDark \"#15110f\" --splashBackgroundColor \"#15110f\" --splashBackgroundColorDark \"#15110f\"",
+    "assets": "capacitor-assets generate --ios --android --iconBackgroundColor \"#000000\" --iconBackgroundColorDark \"#000000\" --splashBackgroundColor \"#000000\" --splashBackgroundColorDark \"#000000\"",
     "sync": "cap sync",
     "android": "cap open android",
     "ios": "cap open ios"
